@@ -10,23 +10,6 @@ Servo servo;
 SerialData data(1,1);
 int vals[1];
 
-void turn(int vals){
-  servo.write(vals);
-  delay(20);
-  servo.write(vals-180);
-  
-}
-
-void shoot() {
-  digitalWrite(9, HIGH);
-//  digitalWrite(11, HIGH);
-//  digitalWrite(6, HIGH);
-  delay(10000); 
-  digitalWrite(9, LOW);
-//  digitalWrite(11, LOW);
-//  digitalWrite(6, LOW);
-}
-
 void setup() {
   // put your setup code here, to run once:
   servo.attach(SERVO_PIN);
@@ -37,8 +20,8 @@ void loop() {
   // put your main code here, to run repeatedly:
 
   //Code to move gun and servos on gears
-//  xVal = analogRead(VRX_PIN);
-//  xVal = map(xVal, 0, 1023, 0, 180);
+  xVal = analogRead(VRX_PIN);
+  xVal = map(xVal, 0, 1023, 0, 180);
   
   
 
